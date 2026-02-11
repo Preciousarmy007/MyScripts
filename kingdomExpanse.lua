@@ -1,13 +1,10 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Kingdom Expanse(v1)", "DarkTheme")
 
-
--- Game id for kingdom expanse -> 128097457610842
 if Game.PlaceId == 128097457610842 then
-    -- Main
     local Tab = Window:NewTab("Main")
     
-    -- Section 
+
     local Section = Tab:NewSection("Resource MAXXING!")
     -- Resource MAXXING Buttons
     Section:NewButton("Wood:Lumber", "Click to increase Lumber or wood", function()
@@ -55,9 +52,8 @@ if Game.PlaceId == 128097457610842 then
         game:GetService("ReplicatedStorage"):WaitForChild("ChargeResources"):FireServer(unpack(args))
     end)
 
-    -- Misc Tab
+
     local Tab = Window:NewTab("Misc")
-    -- Misc Buttons
     local Section = Tab:NewSection("Miscellaneous")
 
     Section:NewButton("Infinite Jump", "Allows you to jump infinitely", function()
@@ -73,8 +69,14 @@ if Game.PlaceId == 128097457610842 then
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end)
 
+
+    Section:NewKeybind("Toggle GUI", "Toggles the GUI", Enum.KeyCode.F, function()
+        Library:ToggleUI()
+    end)
+
+
     return
 end
 
--- If the game is not Kingdom Expanse
 warn("This script is only for Kingdom Expanse!")
+
